@@ -8,6 +8,8 @@ class TicTacToeBoard(size: Int) {
     this(3)
   }
   
+  def boardSize() = size
+  
   def put(char: Char, position: (Int, Int)): Boolean = {
     if (position._1 > size - 1 || position._2 > size - 1) {
       return false
@@ -19,7 +21,7 @@ class TicTacToeBoard(size: Int) {
   
   def get(position: (Int, Int)): Char = {
     if (position._1 > size - 1 || position._2 > size - 1) {
-      return ' '
+      return 0
     }
     return board(position._1)(position._2)
   }
